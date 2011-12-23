@@ -1,6 +1,8 @@
 #include <iostream>
 #include "gameboard.h"
 
+using namespace std;
+
 gameboard::gameboard() {
 	// Create a game board with all blank spaces
 	for (int j = 0; j < 3; j++) {
