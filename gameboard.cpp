@@ -28,7 +28,7 @@ void gameboard::printBoard() {
 		}
 		cout << endl;
 		if (j != 2) {
-			cout << " -----" << endl;
+			cout << " -+-+-" << endl;
 		}
 	}
 }
