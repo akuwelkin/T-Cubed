@@ -16,6 +16,8 @@ tcubed::~tcubed() {
 void tcubed::init_game(char multiplayer) {
 	//multiplayer == _menu_1player define 1 human 1 AI
 	//multiplayer == _menu_2player define 2 human
+	_player1 = new player('X');
+	_player2 = new player('O');
 
 	// For now, we are not allocating any resources,
 	// nor are we creating the board.  We are just
@@ -41,15 +43,12 @@ void tcubed::render() {
 			break;
 		case _player_1_victory_:
 			renderVictory(*_player1);
-			renderGameMenu();
 			break;
 		case _player_2_victory_:
 			renderVictory(*_player2);
-			renderGameMenu();
 			break;
 		case _stalemate_:
 			renderStalemate();
-			renderGameMenu();
 			break;
 		case _game_menu_:
 			renderGameMenu();
@@ -122,15 +121,12 @@ void tcubed::get_input()
 		break;
 
 	case _player_1_victory_:
-		renderVictory(*_player1);
 		_gamestate = _game_menu_;
 		break;
 	case _player_2_victory_:
-		renderVictory(*_player2);
 		_gamestate = _game_menu_;
 		break;
 	case _stalemate_:
-		renderStalemate();
 		_gamestate = _game_menu_;
 		break;
 	case _game_active_:
@@ -142,6 +138,8 @@ void tcubed::get_input()
 		{	//otherwise ask player 2
 			_player2->makemove(_mygameboard);
 		}
+		isplayer1turn = !isplayer1turn;
+		evaluateGameEnd();
 		break;
 	case _game_quit_:
 		cout<<"You should have quit already\n";
@@ -181,7 +179,7 @@ void tcubed::evaluateGameEnd() {
 	}
 	for (int i = 0; i < 3; i++) {
 		if (getColWinner(i) != '\0') {
-			winner = getRowWinner(i);
+			winner = getColWinner(i);
 			if (player1Char == winner) {
 				setGameState(_player_1_victory_);
 				return;
