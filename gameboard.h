@@ -4,12 +4,15 @@
 class gameboard
 {
 public:
-	char board[3][3];
-
+	gameboard();  // constructor
+	~gameboard(); // destructor
 	bool placepiece (char piece, int x_loc, int y_loc);
+	void printBoard();
+	
+private:
+	bool isValidLocation(int x_loc, int y_loc);
 
-	gameboard();	//constructor
-
+	char board[3][3];
 };
 
 #endif
