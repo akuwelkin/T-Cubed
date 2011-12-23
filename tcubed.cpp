@@ -151,3 +151,12 @@ void tcubed::get_input()
 		_gamestate = _game_menu_;
 	}
 }
+
+void tcubed::setGameState(int newState) {
+	// Todo: validation of input would be wise
+	_gamestate = newState;
+}
+
+void tcubed::evaluateGameEnd() {
+	// stub
+}}
