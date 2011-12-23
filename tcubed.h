@@ -26,6 +26,8 @@ private:
 
 	int _gamestate;	//the gamestate of the game
 
+	void setGameState(int newState); // sets the game state to the specified state
+	void evaluateGameEnd(); // checks to see if the game is over; updates state accordingly
 	void renderGameMenu(); // renders the game menu
 	void renderVictory(player p); // renders victory for a player
 	void renderStalemate(); // renders stalemate
