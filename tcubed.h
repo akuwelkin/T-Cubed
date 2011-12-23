@@ -13,7 +13,7 @@ public:
 
 private:
 	
-	void init_game();
+	void init_game(char multiplayer);
 	void get_input();	//gives control to the player -> calls make move the player whose turn it is.
 	void render();	//outputs gameboard to stout;
 	int get_game_state();	//returns the game state
@@ -37,6 +37,11 @@ private:
 	static const int _player_2_victory_ = 2;
 	static const int _stalemate_ = 3;
 	static const int _game_menu_ = 4;
+	static const int _game_quit_ = 5;
+
+	static const char _menu_2player = '1';
+	static const char _menu_1player = '2';
+	static const char _menu_quit = '3';
 };
 
 #endif
