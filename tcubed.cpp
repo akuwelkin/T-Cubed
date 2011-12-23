@@ -181,7 +181,7 @@ void tcubed::evaluateGameEnd() {
 	}
 	for (int i = 0; i < 3; i++) {
 		if (getColWinner(i) != '\0') {
-			winner = getRowWinner(i);
+			winner = getColWinner(i);
 			if (player1Char == winner) {
 				setGameState(_player_1_victory_);
 				return;

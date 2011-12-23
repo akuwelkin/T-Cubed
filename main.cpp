@@ -17,6 +17,10 @@ int main()
 
 	g.printBoard();
 	system("pause");
+	
+	//tcubed t;
+	
+	//t.play_game();
 
 	return 0;
 }
