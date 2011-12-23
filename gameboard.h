@@ -8,6 +8,7 @@ public:
 	~gameboard(); // destructor
 	bool placepiece (char piece, int x_loc, int y_loc);
 	void printBoard();
+	char getPiece(int x_loc, int y_loc);
 	
 private:
 	bool isValidLocation(int x_loc, int y_loc);

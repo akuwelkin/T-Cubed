@@ -33,6 +33,10 @@ private:
 	void renderStalemate(); // renders stalemate
 	void renderGameBoard(gameboard board); // renders the board
 
+	char getRowWinner(int y_loc);
+	char getColWinner(int x_loc);
+	char getDiagonalsWinner();
+
 		//possible game states
 	static const int _game_active_ = 0;
 	static const int _player_1_victory_ = 1;

@@ -53,3 +53,8 @@ bool gameboard::isValidLocation(int x_loc, int y_loc) {
 
 	return result;
 }
+
+char gameboard::getPiece(int x_loc, int y_loc) {
+	// TODO: Let's just assume x and y are valid, for now.  Should throw exception if not.
+	return board[y_loc][x_loc];
+}
