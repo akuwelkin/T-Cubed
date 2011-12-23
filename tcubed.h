@@ -7,6 +7,8 @@
 class tcubed
 {
 public:
+	tcubed();  // constructor
+	~tcubed(); // destructor
 	void play_game();
 
 private:
@@ -24,6 +26,10 @@ private:
 
 	int _gamestate;	//the gamestate of the game
 
+	void renderGameMenu(); // renders the game menu
+	void renderVictory(player p); // renders victory for a player
+	void renderStalemate(); // renders stalemate
+	void renderGameBoard(gameboard board); // renders the board
 
 		//possible game states
 	static const int _game_active_ = 0;
