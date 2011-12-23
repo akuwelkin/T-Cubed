@@ -12,6 +12,10 @@ int main()
 	t.play_game();
 
 	system("pause");
+	
+	//tcubed t;
+	
+	//t.play_game();
 
 	return 0;
 }

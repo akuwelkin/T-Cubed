@@ -18,11 +18,18 @@ gameboard::~gameboard() {
 
 void gameboard::printBoard() {
 	// For now, just printing chars (not pretty)
+	cout << " A B C" << endl;
 	for (int j = 0; j < 3; j++) {
+		cout << (j + 1);
 		for (int i = 0; i < 3; i++) {
-			cout << board[j][i];
+			char separator = '\|';
+			if (i == 2) { separator = ' '; }
+			cout << board[j][i] << separator;
 		}
 		cout << endl;
+		if (j != 2) {
+			cout << " -----" << endl;
+		}
 	}
 }
 
