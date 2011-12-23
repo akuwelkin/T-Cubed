@@ -45,12 +45,15 @@ void tcubed::render() {
 			break;
 		case _player_1_victory_:
 			renderVictory(*_player1);
+			system("pause");
 			break;
 		case _player_2_victory_:
 			renderVictory(*_player2);
+			system("pause");
 			break;
 		case _stalemate_:
 			renderStalemate();
+			system("pause");
 			break;
 		case _game_menu_:
 			renderGameMenu();
