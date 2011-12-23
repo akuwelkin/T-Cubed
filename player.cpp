@@ -15,7 +15,7 @@ using namespace std;
 
 		while(true)
 		{
-			cout<<"Please enter your next move in the format [letter][number]\n"
+			cout<<"Player "<<get_piece()<<" make a move.\n"
 				<<"Example: A1, B2, etc.\n"
 				<<"Input:";
 			cin>>inputline;
@@ -26,7 +26,7 @@ using namespace std;
 				y_index = convertInputToIndex(inputline[0]);
 			}
 			else
-			{	//check incase they input y_index first
+			{
 				x_index = convertInputToIndex(inputline[0]);
 				y_index = convertInputToIndex(inputline[1]);
 			}
