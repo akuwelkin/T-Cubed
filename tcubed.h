@@ -1,3 +1,6 @@
+#ifndef _TCUBED
+#define _TCUBED
+
 #include "player.h"
 #include "gameboard.h"
 
@@ -29,3 +32,5 @@ private:
 	static const int _stalemate_ = 3;
 	static const int _game_menu_ = 4;
 };
+
+#endif
