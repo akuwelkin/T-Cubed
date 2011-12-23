@@ -15,7 +15,13 @@ gameboard::~gameboard() {
 }
 
 void gameboard::printBoard() {
-
+	// For now, just printing chars (not pretty)
+	for (int j = 0; j < 3; j++) {
+		for (int i = 0; i < 3; i++) {
+			cout << board[j][i];
+		}
+		cout << endl;
+	}
 }
 
 bool gameboard::placepiece(char piece, int x_loc, int y_loc) {
