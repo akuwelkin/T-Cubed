@@ -4,6 +4,8 @@
 using namespace std;
 
 tcubed::tcubed() {
+	_player1 = NULL;
+	_player2 = NULL;
 }
 
 tcubed::~tcubed() {
@@ -16,18 +18,18 @@ void tcubed::init_game() {
 	_gamestate = _game_menu_;
 }
 
-void tcubed::get_input();	//gives control to the player -> calls make move the player whose turn it is.
+//void tcubed::get_input();	//gives control to the player -> calls make move the player whose turn it is.
 void tcubed::render() {
 	switch (_gamestate) {
 		case _game_active_:
 			renderGameBoard(_mygameboard);
 			break;
 		case _player_1_victory_:
-			renderVictory(_player1);
+			renderVictory(*_player1);
 			renderGameMenu();
 			break;
 		case _player_2_victory_:
-			renderVictory(_player2);
+			renderVictory(*_player2);
 			renderGameMenu();
 			break;
 		case _stalemate_:
@@ -38,8 +40,9 @@ void tcubed::render() {
 			renderGameMenu();
 			break;
 		default:
+			break;
 	}
-};	
+}
 
 void tcubed::renderGameBoard(gameboard board) {
 	// Lame board render
@@ -69,5 +72,3 @@ void tcubed::renderGameMenu() {
 int tcubed::get_game_state() {
 	return _gamestate;
 }
-
-gameboard _mygameboard;	//the game that's being played

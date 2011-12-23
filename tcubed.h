@@ -18,8 +18,8 @@ private:
 	void render();	//outputs gameboard to stout;
 	int get_game_state();	//returns the game state
 
-	player _player1;
-	player _player2;
+	player* _player1;
+	player* _player2;
 
 	gameboard _mygameboard;	//the game that's being played
 	bool isplayer1turn;
