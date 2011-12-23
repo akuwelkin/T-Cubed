@@ -9,6 +9,7 @@ public:
 	bool placepiece (char piece, int x_loc, int y_loc);
 	void printBoard();
 	char getPiece(int x_loc, int y_loc);
+	void resetBoard();
 	
 private:
 	bool isValidLocation(int x_loc, int y_loc);

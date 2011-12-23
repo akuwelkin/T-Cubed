@@ -19,11 +19,13 @@ void tcubed::init_game(char multiplayer) {
 	//multiplayer == _menu_2player define 2 human
 	_player1 = new player('X');
 	_player2 = new player('O');
+	
+	// Since we are not dynamically allocating boards, we
+	// must reset the board for subsequent plays
+	_mygameboard.resetBoard();
 
-	// For now, we are not allocating any resources,
-	// nor are we creating the board.  We are just
-	// setting our start game state.
-	_gamestate = _game_menu_;
+	// Always start with player 1
+	isplayer1turn = true;
 }
 
 //Game loop
@@ -276,7 +278,7 @@ char tcubed::getDiagonalsWinner() {
 	counter = 1;
 	x_loc--;
 	y_loc++;
-	while ((x_loc > 0) && (pieceToCheck != ' ') && (_mygameboard.getPiece(x_loc,y_loc) == pieceToCheck)) {
+	while ((x_loc > -1) && (pieceToCheck != ' ') && (_mygameboard.getPiece(x_loc,y_loc) == pieceToCheck)) {
 		counter++;
 		x_loc--;
 		y_loc++;

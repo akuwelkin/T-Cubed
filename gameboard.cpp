@@ -5,15 +5,19 @@ using namespace std;
 
 gameboard::gameboard() {
 	// Create a game board with all blank spaces
+	resetBoard();
+}
+
+gameboard::~gameboard() {
+	// Nothing to do here--we did not dynamically allocate any memory
+}
+
+void gameboard::resetBoard() {
 	for (int j = 0; j < 3; j++) {
 		for (int i = 0; i < 3; i++) {
 			board[j][i] = ' ';
 		}
 	}
-}
-
-gameboard::~gameboard() {
-	// Nothing to do here--we did not dynamically allocate any memory
 }
 
 void gameboard::printBoard() {
