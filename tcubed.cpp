@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 #include "tcubed.h"
 
 using namespace std;
@@ -37,6 +38,7 @@ void tcubed::play_game()
 
 //void tcubed::get_input();	//gives control to the player -> calls make move the player whose turn it is.
 void tcubed::render() {
+	system("cls");
 	switch (_gamestate) {
 		case _game_active_:
 			renderGameBoard(_mygameboard);
