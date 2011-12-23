@@ -26,7 +26,7 @@ using namespace std;
 				y_index = convertInputToIndex(inputline[0]);
 			}
 			else
-			{	//check incase they input y_index first
+			{
 				x_index = convertInputToIndex(inputline[0]);
 				y_index = convertInputToIndex(inputline[1]);
 			}
