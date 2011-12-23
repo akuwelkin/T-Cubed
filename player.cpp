@@ -16,11 +16,10 @@ using namespace std;
 		while(true)
 		{
 			cout<<"Player "<<get_piece()<<" make a move.\n"
-				<<"Example: A1, B2, etc.\n"
-				<<"Input:";
+				<<"Example: A1, B2, etc:";
 			cin>>inputline;
 
-			if(inputline[0] >= '0' && inputline[0] <= '2')
+			if(inputline[0] >= '1' && inputline[0] <= '3')
 			{	//check incase they input y_index first
 				x_index = convertInputToIndex(inputline[1]);
 				y_index = convertInputToIndex(inputline[0]);
