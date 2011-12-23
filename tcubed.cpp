@@ -66,11 +66,13 @@ void tcubed::renderGameBoard(gameboard board) {
 void tcubed::renderVictory(player p) {
 	// Lame stalemate render, for the moment
 	cout << "WINNER: " << p.get_piece() << endl;
+	renderGameBoard(_mygameboard);
 }
 
 void tcubed::renderStalemate() {
 	// Lame stalemate render, for the moment
 	cout << "WINNER: NONE" << endl;
+	renderGameBoard(_mygameboard);
 }
 
 void tcubed::renderGameMenu() {
@@ -96,7 +98,6 @@ void tcubed::get_input()
 	switch(_gamestate)
 	{
 	case _game_menu_:
-		renderGameMenu();
 		cin>>input;
 
 		if(input == _menu_2player)

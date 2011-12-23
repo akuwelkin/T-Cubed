@@ -41,7 +41,7 @@ using namespace std;
 				}
 			}
 
-			cout<<"Invalid move, please try again:";
+			cout<<"Invalid move, please try again:\n";
 
 		}
 			return;
