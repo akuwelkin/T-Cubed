@@ -6,6 +6,8 @@ using namespace std;
 tcubed::tcubed() {
 	_player1 = NULL;
 	_player2 = NULL;
+
+	_gamestate = _game_menu_;	//prompt for menu first
 }
 
 tcubed::~tcubed() {
@@ -24,13 +26,11 @@ void tcubed::init_game(char multiplayer) {
 //Game loop
 void tcubed::play_game()
 {
-	
-
-
-
-
-
-
+	while(_gamestate != _game_quit_)
+	{
+		render();	//outputs the appropriate information
+		get_input();	//this function updates the gamestate
+	}
 }
 
 //void tcubed::get_input();	//gives control to the player -> calls make move the player whose turn it is.
