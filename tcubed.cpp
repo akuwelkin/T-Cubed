@@ -72,3 +72,12 @@ void tcubed::renderGameMenu() {
 int tcubed::get_game_state() {
 	return _gamestate;
 }
+
+void tcubed::setGameState(int newState) {
+	// Todo: validation of input would be wise
+	_gamestate = newState;
+}
+
+void tcubed::evaluateGameEnd() {
+	// stub
+}
